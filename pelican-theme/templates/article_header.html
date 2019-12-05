@@ -6,7 +6,9 @@
       {% set year = article.date.strftime('%Y') %}
       {{ month }} <span class="m-date-day">{{ day }}</span> {{ year }}
     </time>
-    {{ article.title }}
+    <div class="p-name">
+      {{ article.title }}
+    </div>
     {% if article.status == 'draft' %}
     <span class="m-label m-dim">draft</span>
     {% endif %}
