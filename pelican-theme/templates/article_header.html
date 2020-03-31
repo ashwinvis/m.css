@@ -13,10 +13,6 @@
     <span class="m-label m-dim">draft</span>
     {% endif %}
   </a></h1>
-  {# Enable publishing using Bridgy https://brid.gy/about#webmentions #}
-  {% if article.status == 'published' and M_BRIDGY_PUBLISH %}
-  <a href="https://bridgy/publish/{{ M_BRIDGY_PUBLISH }}"></a>
-  {% endif %}
   {# Display summary only if:
     - we're on article listing page (either the articles_page is defined by
       Pelican the article_list is defined by our archive/index page and the

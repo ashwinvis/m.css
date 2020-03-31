@@ -124,6 +124,10 @@
       {{ M_ARCHIVED_ARTICLE_BADGE|render_rst|replace('{year}', article.date.year)|rtrim|indent(6) }}
       {% endif %}
       {% if article.content %}
+{# Enable publishing using Bridgy https://brid.gy/about#webmentions #}
+{% if article.status == 'published' and M_BRIDGY_PUBLISH %}
+<a href="https://brid.gy/publish/{{ M_BRIDGY_PUBLISH }}"></a>
+{% endif %}
 <!-- content -->
 <div class="e-content">
 {{ article.content|trim }}
