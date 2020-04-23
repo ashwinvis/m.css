@@ -1830,7 +1830,8 @@ body > header > nav #m-navbar-brand, body > header > nav a#m-navbar-show, body >
   padding-right: 1rem;
 }
 body > header > nav a#m-navbar-brand, body > header > nav #m-navbar-brand a {
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-family: monospace;
 }
 body > header > nav a#m-navbar-brand img, body > header > nav #m-navbar-brand a img {
   width: 1.75rem;
