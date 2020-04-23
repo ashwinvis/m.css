@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+Planet Avium
+{% endblock %}
+
+{% block content %}
+<style>
+#planet img{
+    max-width: 100%;
+    height: auto;
+}
+</style>
+
+{% if WEBRING_FEED_URLS %}
+<div id="planet">
+{% for article in webring_articles %}
+<article class="h-cite">
+<header>
+  <h1>
+    <a href="{{ article.link }}" rel="bookmark" class="u-url"
+       title="{{ article.title}}" target="_blank">
+      <time class="m-date" datetime="{{ article.date }}">
+        {{ article.date.strftime("%b") }}
+        <span class="m-date-day">
+          {{ article.date.strftime("%d") }}
+        </span>
+        {{ article.date.strftime("%Y") }}
+      </time>
+      <div class="p-name">
+      {{ article.title or "💬" }}
+      </div>
+    </a>
+  </h1>
+  <div class="p-summary">
+  {{ article.summary }}
+  </div>
+</header>
+<footer>
+  <p>Posted by
+  <span class="p-author"><b>{{ article.author or "Anonymous" }}</b></span>
+  on <time datetime="{{ article.date }}" class="dt-published"></time>
+  {{ article.date.strftime("%a %d %b %Y")}}
+  in {{ article.feed_name }}.
+</footer>
+<div class="m-clearfix-l"></div>
+
+</article>
+{% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}
