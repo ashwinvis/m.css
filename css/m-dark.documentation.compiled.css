@@ -303,7 +303,7 @@ a.m-doc-search-icon:focus svg, a.m-doc-search-icon:hover svg, a.m-doc-search-ico
   background-color: #2a703f;
 }
 .m-doc-search-typed {
-  color: #5b9dd9;
+  color: #66b6ff;
 }
 .m-doc-search input[type="search"] { -webkit-appearance: textfield; }
 .m-doc-search input[type="search"]::-webkit-search-decoration,
