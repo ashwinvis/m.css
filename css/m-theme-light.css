@@ -25,7 +25,7 @@
 :root {
   /* Text properties */
   --font: 'et-book', serif;
-  --ui-font: 'Source Sans Pro', sans-serif;
+  --button-font: 'Source Sans Pro', sans-serif;
   --code-font: 'Source Code Pro', monospace;
   --font-size: 1.25rem;
   --code-font-size: 0.8em; /* *not* rem, so it follows surrounding font size */
