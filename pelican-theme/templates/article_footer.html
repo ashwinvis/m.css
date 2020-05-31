@@ -1,1 +1,17 @@
-<p>Posted{% if article.authors %} by {% for author in article.authors %}<a rel="author" href="{{ author.url|format_siteurl|e }}">{{ author|e }}</a>{% endfor %}{% endif %} on <time datetime="{{ article.date.isoformat() }}" class="dt-published">{{ article.locale_date }}</time> in <a class="p-category" href="{{ article.category.url|format_siteurl|e }}">{{ article.category|e }}</a>.{% if article.modified %} <span class="m-label m-success">updated <time datetime="{{ article.modified.isoformat() }}" class="dt-updated">{{ article.locale_modified }}</time></span>{% endif %}{% if article.archived == 'True' %} <span class="m-label m-warning">archived</span>{% endif %}{% if article.status == 'draft' %} <span class="m-label m-dim">draft</span>{% endif %}{% if article.tags %} Tags: {% for tag in article.tags %}<a href="{{ tag.url|format_siteurl|e }}">{{ tag|e }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}</p>
+<p>Posted{% if article.authors %} by {% for author in article.authors %}<a rel="author" href="{{ author.url|format_siteurl|e }}">{{ author|e }}</a>{% endfor %}{% endif %} on <time datetime="{{ article.date.isoformat() }}" class="dt-published">{{ article.locale_date }}</time> in <a class="p-category" href="{{ article.category.url|format_siteurl|e }}">{{ article.category|e }}</a>.{% if article.modified %} <span class="m-label m-success">updated <time datetime="{{ article.modified.isoformat() }}" class="dt-updated">{{ article.locale_modified }}</time></span>{% endif %}{% if article.archived == 'True' %} <span class="m-label m-warning">archived</span>{% endif %}{% if article.status == 'draft' %} <span class="m-label m-dim">draft</span>{% endif %}{% if article.tags %} Tags: {% for tag in article.tags %}<a href="{{ tag.url|format_siteurl|e }}">{{ tag|e }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}
+  {% if article.stats -%}
+  <time class="dt-read-mins">
+    <svg xmlns="http://www.w3.org/2000/svg" width="0.8em" height="0.8em"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    {{ article.stats['read_mins'] }}
+    {% if article.stats['read_mins'] > 1 -%}
+      minutes
+    {% else %}
+      minute
+    {%- endif %}
+  </time>
+  {%- endif %}
+</p>
