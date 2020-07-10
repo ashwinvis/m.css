@@ -90,7 +90,7 @@
     {% if article.content %}
     <div class="m-container m-container-inflatable">
       <div class="m-row">
-        <div class="m-col-m-10 m-push-m-1 m-nopady">
+        <div class="m-col-m-10 m-push-m-1 m-nopady m-col-l-8">
           {% if article.archived == 'True' and M_ARCHIVED_ARTICLE_BADGE %}
           {{ M_ARCHIVED_ARTICLE_BADGE|render_rst|replace('{year}', article.date.year)|indent(8) }}
           {% endif %}
@@ -108,7 +108,7 @@
     {% endif %}
     <footer class="m-container">
       <div class="m-row">
-        <div class="m-col-m-10 m-push-m-1 m-nopadb">
+        <div class="m-col-m-10 m-push-m-1 m-nopadb m-col-l-8">
           {% macro footer() %}{% include "article_footer.html" %}{% endmacro %}
           {{ footer()|rtrim|indent(10) }}
         </div>
@@ -116,7 +116,7 @@
     </footer>
   </article>
   {% else %}
-    <article class="h-entry m-col-m-10 m-nopadb">
+    <article class="h-entry m-col-m-10 m-nopadb m-col-l-8">
       {% macro header() %}{% include "article_header.html" %}{% endmacro %}
       {{ header()|rtrim|indent(6) }}
       <div class="m-clearfix-l"></div>

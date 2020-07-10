@@ -19,11 +19,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="m-col-m-10">
+    <div class="m-col-m-10 m-col-l-8">
       {% block content_title %}
       {% endblock content_title %}
       {% for article in articles_page.object_list %}
-      <article>
+      <article class="m-article-list">
         {% macro header() %}{% include "article_header.html" %}{% endmacro %}
         {{ header()|rtrim|indent(8) }}
         <footer>

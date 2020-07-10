@@ -39,7 +39,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="m-col-m-10">
+    <div class="m-col-m-10 m-col-l-8">
       {% if articles_page %}
       {% set article_list = articles_page.object_list %}
       {% else %}
@@ -52,7 +52,7 @@
       </div>
       {% endif %}
       {% for article in article_list %}
-      <article>
+      <article class="m-article-list">
         {% macro header() %}{% include "article_header.html" %}{% endmacro %}
         {{ header()|rtrim|indent(8) }}
         {% set show_content =
