@@ -1,7 +1,7 @@
 {% if article.author and article.author.badge %}
 <div class="m-block m-success{% if article.author.image %} m-badge{% endif %}">
   {% if article.author.image %}
-  <img src="{{ article.author.image|expand_link(article)|e }}" alt="{{ article.author|e }}" />
+  <img src="{{ article.author.image|expand_link(article)|e }}" alt="{{ article.author|e }}" height="100" />
   {% endif %}
   <h3>About the author</h3>
   {{ article.author.badge|expand_links(article)|rtrim|indent(2) }}
