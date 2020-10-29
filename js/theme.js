@@ -21,6 +21,7 @@ function change (oldColor, newColor, nowait) {
     document.documentElement.classList.add('color-theme-in-transition')
   }
 
+  document.documentElement.setAttribute('data-theme', newColor)
   themeSwitch.setAttribute('color', newColor)
   localStorage.setItem('color', newColor)
 
